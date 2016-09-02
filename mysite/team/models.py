@@ -12,7 +12,7 @@ from mysite.mailing_list.models import MailingList
 
 
 class Team(models.Model):
-    creator = models.ForeignKey(User, blank=True)
+    creator = models.ForeignKey(User, blank=False)
     name = models.CharField(max_length=255, unique=True)
     position = models.CharField(max_length=255)
     alumni = models.BooleanField(default=False)
