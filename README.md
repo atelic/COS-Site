@@ -3,38 +3,39 @@
 
 # COS-Site
 
-<h3>Installation</h3>
+### Installation
 
-$ pip install -r requirements.txt
+`$ pip install -r requirements.txt`
 
-$ bower install
+`$ bower install`
 
-Add a local_settings.py file from the template included in the deploy folder- place this new file (local_settings.py) within the mysite folder.
+`$ cp mysite/default_local_settings.py local_settings.py`
 
-$ brew install memcached
+`$ brew install memcached`
 
-$ python manage.py migrate
+`$ python manage.py migrate`
 
-$ python manage.py createsuperuser
+`$ python manage.py createsuperuser`
 
-$ python manage.py runserver
+`$ python manage.py runserver`
 
 go to http://127.0.0.1:8000
 
 
-<h3>Run as Admin</h3>
+### View as Admin
 
-$ python manage.py runserver
+`$ python manage.py runserver`
 
 go to http://127.0.0.1:8000/admin
 
-<h3>Settings</h3>
+### Troubleshooting
 
-Go to mysite and change default_local_settings.py to local_settings.py.
+1. If you see the error:
+   `django.db.utils.OperationalError: could not connect to server: Connection refused`
+   then you will need to start the postgres server.
 
+   On a Mac:
+   `$ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start`
 
-
-
-
-
-
+   On Linux:
+   `$ sudo systemctl start postgres`
